@@ -1,26 +1,24 @@
-import numpy as np
-from google.cloud import storage
+def run_quickstart():
+    # [START datastore_quickstart]
+    # Imports the Google Cloud client library
+    from google.cloud import datastore
 
-def handler(request):
+    # Instantiates a client
+    datastore_client = datastore.Client()
 
-    array = np.array([
-    [3, 7, 1],
-    [10, 3, 2],
-    [5, 6, 7]
-    ])
-    print(np.sort(array, axis=None))
+    # The kind for the new entity
+    kind = 'Task'
+    # The name/ID for the new entity
+    name = 'sampletask1'
+    # The Cloud Datastore key for the new entity
+    task_key = datastore_client.key(kind, name)
 
-    # def list_blobs(bucket_name):
-    # """Lists all the blobs in the bucket."""
-    bucket_name = "indu-storage-m3"
+    # Prepares the new entity
+    task = datastore.Entity(key=task_key)
+    task['description'] = 'Buy milk'
 
-    storage_client = storage.Client()
+    # Saves the entity
+    datastore_client.put(task)
 
-    # Note: Client.list_blobs requires at least package version 1.17.0.
-    blobs = storage_client.list_blobs(bucket_name)
-
-    for blob in blobs:
-        print(blob.name)
-
-
-    return "Successfully executed 1234"
+    print('Saved {}: {}'.format(task.key.name, task['description']))
+    # [END datastore_quickstart]

@@ -11,8 +11,8 @@
         "isRemovable": true,
         "filePath": "gcppython0809.py",
         "cursor": {
-          "lineNumber": 15,
-          "column": 35
+          "lineNumber": 24,
+          "column": 33
         },
         "config": {
           "runtime": "python37",
@@ -32,6 +32,13 @@
         "testCases": {
           "1219f971-674a-442f-9b6b-4468ffbc5753": {
             "id": "1219f971-674a-442f-9b6b-4468ffbc5753",
+            "name": "Test event",
+            "functionId": "b5924c53-e454-4cf6-94d4-583e8d59ff85",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          },
+          "a5ec7f6a-eadf-4130-b5fe-64c39b228dcf": {
+            "id": "a5ec7f6a-eadf-4130-b5fe-64c39b228dcf",
             "name": "Test event",
             "functionId": "b5924c53-e454-4cf6-94d4-583e8d59ff85",
             "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
@@ -114,7 +121,7 @@
     "platform": "GCP",
     "language": "python",
     "platformRegions": {},
-    "lastSave": 1632457477162
+    "lastSave": 1632458180174
   },
   "VCS_STATE": {
     "provider": "GitHub",
